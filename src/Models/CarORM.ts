@@ -1,5 +1,5 @@
 import { Model, Schema, model, models } from 'mongoose';
-import ICar from '../Interfaces/Car.interface';
+import ICar from '../Interfaces/ICar';
 
 class CarORM {
   private schema: Schema;

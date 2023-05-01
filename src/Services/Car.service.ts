@@ -1,11 +1,12 @@
 import Car from '../Domains/Car';
-import ICar from '../Interfaces/Car.interface';
+import ICar from '../Interfaces/ICar';
 import CarORM from '../Models/CarORM';
 
 class CarService {
   private createCarDomain(car: ICar | null): Car | null {
     if (car) {
-      return new Car({
+      const newCar = new Car({
+        id: car.id,
         model: car.model,
         year: car.year,
         color: car.color,
@@ -14,6 +15,7 @@ class CarService {
         doorsQty: car.doorsQty,
         seatsQty: car.seatsQty,
       });
+      return newCar;
     }
     return null;
   }
