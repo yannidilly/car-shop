@@ -22,6 +22,11 @@ class CarORM {
     const newCar = await this.model.create({ ...car });
     return newCar;
   }
+
+  public async getAll(): Promise<ICar[]> {
+    const allCars = await this.model.find();
+    return allCars;
+  }
 }
 
 export default CarORM;
