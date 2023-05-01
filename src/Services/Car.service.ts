@@ -26,16 +26,16 @@ class CarService {
     return this.createCarDomain(newCar);
   }
 
-  public async listAllCars(): Promise<ICar[]> {
+  public async listAllCars(): Promise<(Car | null)[]> {
     const carODM = new CarORM();
     const allCars = await carODM.getAll();
-    return allCars;
+    return allCars.map((car) => this.createCarDomain(car));
   }
 
-  public async getCarById(id: string): Promise<ICar | null> {
+  public async getCarById(id: string): Promise<Car | null> {
     const carODM = new CarORM();
     const car = await carODM.getById(id);
-    return car;
+    return this.createCarDomain(car);
   }
 }
 
