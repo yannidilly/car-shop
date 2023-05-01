@@ -22,6 +22,16 @@ class MotorcycleORM {
     const newMotorcycle = await this.model.create({ ...motorcycle });
     return newMotorcycle;
   }
+
+  public async getAll(): Promise<IMotorcycle[]> {
+    const allMotorcycle = await this.model.find();
+    return allMotorcycle;
+  }
+
+  public async getById(id: string): Promise<IMotorcycle | null> {
+    const motorcycle = await this.model.findById(id);
+    return motorcycle;
+  }
 }
 
 export default MotorcycleORM;

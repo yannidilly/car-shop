@@ -3,7 +3,7 @@ import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleORM from '../Models/MotorcycleORM';
 
 class MotorcycleService {
-  private createMotorcycleDomain(motorcycle: IMotorcycle): Motorcycle | null {
+  private createMotorcycleDomain(motorcycle: IMotorcycle | null): Motorcycle | null {
     if (motorcycle) {
       const newMotorcycle = new Motorcycle({
         id: motorcycle.id,
@@ -24,6 +24,18 @@ class MotorcycleService {
     const motorcycleORM = new MotorcycleORM();
     const newMotorcycle = await motorcycleORM.create(motorcycle);
     return this.createMotorcycleDomain(newMotorcycle);
+  }
+
+  public async listAllMotorcycles(): Promise<(Motorcycle | null)[]> {
+    const motorcycleORM = new MotorcycleORM();
+    const allMotorcycles = await motorcycleORM.getAll();
+    return allMotorcycles.map((motorcycle) => this.createMotorcycleDomain(motorcycle));
+  }
+
+  public async getMotorcycleById(id: string): Promise<Motorcycle | null> {
+    const motorcycleORM = new MotorcycleORM();
+    const motorcycle = await motorcycleORM.getById(id);
+    return this.createMotorcycleDomain(motorcycle);
   }
 }
 
