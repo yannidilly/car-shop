@@ -20,16 +20,22 @@ class CarService {
     return null;
   }
 
-  public async createCar(car: ICar) {
+  public async createCar(car: ICar): Promise<Car | null> {
     const carODM = new CarORM();
     const newCar = await carODM.create(car);
     return this.createCarDomain(newCar);
   }
 
-  public async listAllCars() {
+  public async listAllCars(): Promise<ICar[]> {
     const carODM = new CarORM();
     const allCars = await carODM.getAll();
     return allCars;
+  }
+
+  public async getCarById(id: string): Promise<ICar | null> {
+    const carODM = new CarORM();
+    const car = await carODM.getById(id);
+    return car;
   }
 }
 

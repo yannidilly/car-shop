@@ -27,6 +27,11 @@ class CarORM {
     const allCars = await this.model.find();
     return allCars;
   }
+
+  public async getById(id: string): Promise<ICar | null> {
+    const car = await this.model.findById(id);
+    return car;
+  }
 }
 
 export default CarORM;
