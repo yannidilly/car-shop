@@ -32,6 +32,12 @@ class CarORM {
     const car = await this.model.findById(id);
     return car;
   }
+
+  public async edit(id: string, car: ICar): Promise<ICar | null> {
+    await this.model.findOneAndUpdate({ id }, car);
+    const updatedCar = await this.model.findById(id);
+    return updatedCar;
+  }
 }
 
 export default CarORM;

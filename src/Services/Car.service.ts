@@ -33,9 +33,15 @@ class CarService {
   }
 
   public async getCarById(id: string): Promise<Car | null> {
-    const carODM = new CarORM();
-    const car = await carODM.getById(id);
+    const carORM = new CarORM();
+    const car = await carORM.getById(id);
     return this.createCarDomain(car);
+  }
+
+  public async editCar(id: string, car: ICar): Promise<Car | null> {
+    const carORM = new CarORM();
+    const updatedCar = await carORM.edit(id, car);
+    return this.createCarDomain(updatedCar);
   }
 }
 
