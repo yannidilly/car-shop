@@ -17,8 +17,8 @@ O sistema foi desenvolvido com tecnologias modernas e robustas, incluindo Node.j
 
 ## Integrando com um front-end
 Para integrar com o back-end, considere os seguintes endpoints:
-- '/cars' do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
-```
+- `'/cars'` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
+```js
 {
   "model": "Marea",
   "year": 2002,
@@ -28,11 +28,11 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "doorsQty": 4,
   "seatsQty": 5
 }
-```js
-- '/cars' do tipo GET: é possível listar todos os carros disponíveis
-- '/cars/:id' do tipo GET: é possível listar um carro segundo seu id
-- '/cars/:id' do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
 ```
+- `'/cars'` do tipo GET: é possível listar todos os carros disponíveis
+- `'/cars/:id'` do tipo GET: é possível listar um carro segundo seu id
+- `'/cars/:id'` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
+```js
 {
   "model": "Marea",
   "year": 1992,
@@ -42,9 +42,9 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "doorsQty": 2,
   "seatsQty": 5
 }
-```js
-- '/motorcycles' do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
 ```
+- `'/motorcycles'` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
+```js
 {
   "model": "Honda Cb 600f Hornet",
   "year": 2005,
@@ -54,11 +54,11 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "category": "Street",
   "engineCapacity": 600
 }
-```js
-- '/motorcycles' do tipo GET: é possível listar todos os carros disponíveis
-- '/motorcycles/:id' do tipo GET: é possível listar um carro segundo seu id
-- '/motorcycles/:id' do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
 ```
+- `'/motorcycles'` do tipo GET: é possível listar todos os carros disponíveis
+- `'/motorcycles/:id'` do tipo GET: é possível listar um carro segundo seu id
+- `'/motorcycles/:id'` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
+```js
 {
   "model": "Honda Cb 600f Hornet",
   "year": 2014,
@@ -68,7 +68,7 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "category": "Street",
   "engineCapacity": 600
 }
-```js
+```
 
 ## Arquitetura MSC
 O projeto segue a arquitetura MSC (Model, Service e Controller) para separar as responsabilidades da aplicação. Aqui está uma breve descrição de cada camada:
