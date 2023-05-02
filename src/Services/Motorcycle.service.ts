@@ -1,6 +1,6 @@
 import Motorcycle from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
-import MotorcycleORM from '../Models/MotorcycleORM';
+import MotorcycleODM from '../Models/MotorcycleODM';
 
 class MotorcycleService {
   private createMotorcycleDomain(motorcycle: IMotorcycle | null): Motorcycle | null {
@@ -21,26 +21,26 @@ class MotorcycleService {
   }
 
   public async createMotorcycle(motorcycle: IMotorcycle): Promise<Motorcycle | null> {
-    const motorcycleORM = new MotorcycleORM();
-    const newMotorcycle = await motorcycleORM.create(motorcycle);
+    const motorcycleODM = new MotorcycleODM();
+    const newMotorcycle = await motorcycleODM.create(motorcycle);
     return this.createMotorcycleDomain(newMotorcycle);
   }
 
   public async listAllMotorcycles(): Promise<(Motorcycle | null)[]> {
-    const motorcycleORM = new MotorcycleORM();
-    const allMotorcycles = await motorcycleORM.getAll();
+    const motorcycleODM = new MotorcycleODM();
+    const allMotorcycles = await motorcycleODM.getAll();
     return allMotorcycles.map((motorcycle) => this.createMotorcycleDomain(motorcycle));
   }
 
   public async getMotorcycleById(id: string): Promise<Motorcycle | null> {
-    const motorcycleORM = new MotorcycleORM();
-    const motorcycle = await motorcycleORM.getById(id);
+    const motorcycleODM = new MotorcycleODM();
+    const motorcycle = await motorcycleODM.getById(id);
     return this.createMotorcycleDomain(motorcycle);
   }
 
   public async editMotorcycle(id: string, motorcycle: IMotorcycle): Promise<Motorcycle | null> {
-    const motorcycleORM = new MotorcycleORM();
-    const updatedMotorcycle = await motorcycleORM.edit(id, motorcycle);
+    const motorcycleODM = new MotorcycleODM();
+    const updatedMotorcycle = await motorcycleODM.edit(id, motorcycle);
     return this.createMotorcycleDomain(updatedMotorcycle);
   }
 }
