@@ -1,10 +1,13 @@
 # Nome do projeto
 O Car Shop é um sistema back-end para anúncios de veículos, incluindo carros e motos. Com o Car Shop, os usuários podem criar anúncios para seus veículos, especificando informações como marca, modelo, ano, preço e outras características. Os anúncios podem ser visualizados por outros usuários do sistema, que podem entrar em contato com o anunciante para obter mais informações ou negociar a compra do veículo.
+
 O sistema foi desenvolvido com tecnologias modernas e robustas, incluindo Node.js, Express, MongoDB e Mongoose, garantindo uma ótima performance e escalabilidade. Além disso, foram implementados testes unitários em Mocha para garantir a qualidade do código.
 
 ## Pré-requisitos
 - Node.js
 - MongoDB
+- Docker
+- Mocha
 ## Instalação
 1. Clone o repositório.
 2. Instale as dependências do projeto: `npm install`
@@ -25,7 +28,7 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "doorsQty": 4,
   "seatsQty": 5
 }
-```
+```js
 - '/cars' do tipo GET: é possível listar todos os carros disponíveis
 - '/cars/:id' do tipo GET: é possível listar um carro segundo seu id
 - '/cars/:id' do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
@@ -39,7 +42,7 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "doorsQty": 2,
   "seatsQty": 5
 }
-```
+```js
 - '/motorcycles' do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
 ```
 {
@@ -51,7 +54,7 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "category": "Street",
   "engineCapacity": 600
 }
-```
+```js
 - '/motorcycles' do tipo GET: é possível listar todos os carros disponíveis
 - '/motorcycles/:id' do tipo GET: é possível listar um carro segundo seu id
 - '/motorcycles/:id' do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
@@ -65,7 +68,7 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "category": "Street",
   "engineCapacity": 600
 }
-```
+```js
 
 ## Arquitetura MSC
 O projeto segue a arquitetura MSC (Model, Service e Controller) para separar as responsabilidades da aplicação. Aqui está uma breve descrição de cada camada:
@@ -76,7 +79,7 @@ O projeto segue a arquitetura MSC (Model, Service e Controller) para separar as 
 ## Testes unitários
 O projeto possui testes unitários implementados usando Mocha. Para executar os testes, use o comando: `npm run test:mocha`
 
-##Tecnologias utilizadas
+## Tecnologias utilizadas
 - TypeScript
 - Mongoose
 - Mocha
