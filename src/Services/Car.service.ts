@@ -10,7 +10,7 @@ class CarService {
         model: car.model,
         year: car.year,
         color: car.color,
-        status: car.status,
+        status: (car.status) ? car.status : false,
         buyValue: car.buyValue,
         doorsQty: car.doorsQty,
         seatsQty: car.seatsQty,
