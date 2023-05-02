@@ -17,8 +17,8 @@ O sistema foi desenvolvido com tecnologias modernas e robustas, incluindo Node.j
 
 ## Integrando com um front-end
 Para integrar com o back-end, considere os seguintes endpoints:
-- `'/cars'` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
-```js
+- `/cars` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
+```json
 {
   "model": "Marea",
   "year": 2002,
@@ -29,10 +29,10 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "seatsQty": 5
 }
 ```
-- `'/cars'` do tipo GET: é possível listar todos os carros disponíveis
-- `'/cars/:id'` do tipo GET: é possível listar um carro segundo seu id
-- `'/cars/:id'` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
-```js
+- `/cars` do tipo GET: é possível listar todos os carros disponíveis
+- `/cars/:id` do tipo GET: é possível listar um carro segundo seu id
+- `/cars/:id` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
+```json
 {
   "model": "Marea",
   "year": 1992,
@@ -43,8 +43,8 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "seatsQty": 5
 }
 ```
-- `'/motorcycles'` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
-```js
+- `/motorcycles` do tipo POST: é possível criar um novo carro seguindo o formato abaixo:
+```json
 {
   "model": "Honda Cb 600f Hornet",
   "year": 2005,
@@ -55,10 +55,10 @@ Para integrar com o back-end, considere os seguintes endpoints:
   "engineCapacity": 600
 }
 ```
-- `'/motorcycles'` do tipo GET: é possível listar todos os carros disponíveis
-- `'/motorcycles/:id'` do tipo GET: é possível listar um carro segundo seu id
-- `'/motorcycles/:id'` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
-```js
+- `/motorcycles` do tipo GET: é possível listar todos os carros disponíveis
+- `/motorcycles/:id` do tipo GET: é possível listar um carro segundo seu id
+- `/motorcycles/:id` do tipo PUT: é possível editar as informações de um carro seguindo o formato abaixo:
+```json
 {
   "model": "Honda Cb 600f Hornet",
   "year": 2014,
