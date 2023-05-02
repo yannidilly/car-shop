@@ -37,6 +37,12 @@ class MotorcycleService {
     const motorcycle = await motorcycleORM.getById(id);
     return this.createMotorcycleDomain(motorcycle);
   }
+
+  public async editMotorcycle(id: string, motorcycle: IMotorcycle): Promise<Motorcycle | null> {
+    const motorcycleORM = new MotorcycleORM();
+    const updatedMotorcycle = await motorcycleORM.edit(id, motorcycle);
+    return this.createMotorcycleDomain(updatedMotorcycle);
+  }
 }
 
 export default MotorcycleService;

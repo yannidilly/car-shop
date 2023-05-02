@@ -32,6 +32,12 @@ class MotorcycleORM {
     const motorcycle = await this.model.findById(id);
     return motorcycle;
   }
+
+  public async edit(id: string, motorcycle: IMotorcycle): Promise<IMotorcycle | null> {
+    await this.model.findOneAndUpdate({ id }, motorcycle);
+    const updatedMotorcycle = await this.model.findById(id);
+    return updatedMotorcycle;
+  }
 }
 
 export default MotorcycleORM;

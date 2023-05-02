@@ -45,4 +45,19 @@ describe('Testa a camada Service da entidade Motorcycle', function () {
       expect(result).to.be.deep.equals(motorcycleMock.motorcycle);
     },
   );
+
+  it(
+    'Verifica se a função editMotorcycle retorna o objeto do novo Motorcyclero',
+    async function () {
+      sinon.stub(Model, 'findOneAndUpdate').resolves(motorcycleMock.newMotorcycle);
+      sinon.stub(Model, 'findById').resolves(motorcycleMock.newMotorcycle);
+      const service = new MotorcycleService();
+      const result = await service
+        .editMotorcycle(
+          motorcycleMock.motorcycleId,
+          motorcycleMock.newMotorcycleWithoutIdAndStatus,
+        );
+      expect(result).to.be.deep.equals(motorcycleMock.newMotorcycle);
+    },
+  );
 });
