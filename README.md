@@ -1,4 +1,4 @@
-# Nome do projeto
+# Car Shop
 O Car Shop é um sistema back-end para anúncios de veículos, incluindo carros e motos. Com o Car Shop, os usuários podem criar anúncios para seus veículos, especificando informações como marca, modelo, ano, preço e outras características. Os anúncios podem ser visualizados por outros usuários do sistema, que podem entrar em contato com o anunciante para obter mais informações ou negociar a compra do veículo.
 
 O sistema foi desenvolvido com tecnologias modernas e robustas, incluindo Node.js, Express, MongoDB e Mongoose, garantindo uma ótima performance e escalabilidade. Além disso, foram implementados testes unitários em Mocha para garantir a qualidade do código.
